@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EMI Calculator | SANVIN</title>
+  <link rel="stylesheet" href="assets/emi-calculator.css">
+  
+</head>
+<body>
+
+  <!-- 1. Top blue bar -->
+  <div class="topbar">
+    <div class="container">
+      <span>&#9742; 93549 00511</span>
+      <span>Login</span>
+    </div>
+  </div>
+
+  <!-- 2. Header with menu -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">SANVIN</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="contact.html">About Us</a>
+        <a href="faq.html">Our Schemes</a>
+        <a href="gold-calculator.html">Gold Rates</a>
+        <a href="emi-calculator.html">Calculators</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="apply-loan.html" class="btn">Apply Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 3. Hero section -->
+  <section class="hero">
+    <div class="container">
+      <p class="breadcrumb">Home / EMI Calculator</p>
+      <p class="label">LOAN PLANNER</p>
+      <h1>EMI Calculator</h1>
+      <p class="intro">
+        Enter your loan details to get an estimate of your monthly EMI.
+        Please confirm the final amount with a SANVIN branch.
+      </p>
+    </div>
+  </section>
+
+  <!-- 4. Calculator -->
+  <main class="container">
+    <div class="calculator">
+
+      <!-- Left: form -->
+      <div class="box">
+        <h2>Loan details</h2>
+
+        <label for="amount">Loan amount (&#8377;)</label>
+        <input type="number" id="amount" value="500000">
+
+        <label for="rate">Interest rate (% per year)</label>
+        <input type="number" id="rate" value="12" step="0.1">
+
+        <label for="years">Loan tenure (years)</label>
+        <input type="number" id="years" value="3">
+
+        <p id="error"></p>
+
+        <button id="calcBtn">Calculate EMI</button>
+      </div>
+
+      <!-- Right: result -->
+      <div class="box">
+        <h2>Your estimate</h2>
+
+        <p class="small">Monthly EMI</p>
+        <p class="big" id="emi">&#8377;0</p>
+
+        <div class="row">
+          <span>Principal amount</span>
+          <strong id="principal">&#8377;0</strong>
+        </div>
+        <div class="row">
+          <span>Total interest</span>
+          <strong id="interest">&#8377;0</strong>
+        </div>
+        <div class="row">
+          <span>Total payment</span>
+          <strong id="total">&#8377;0</strong>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="note">
+      <strong>Important:</strong> This is only an estimate. Actual EMI can change
+      with processing fees, taxes and the final interest rate.
+    </p>
+  </main>
+
+  <footer>&copy; 2026 SANVIN. All rights reserved.</footer>
+
+  <script src="assets/emi-calculator.js"></script>
+</body>
+</html>

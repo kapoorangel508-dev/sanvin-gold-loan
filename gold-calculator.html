@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SANVIN Gold Calculator</title>
+
+    <link rel="stylesheet" href="assets/gold-calculator.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="index.html">
+            <img class="brand-logo" src="assets/sanvin-logo.jpeg" alt="SANVIN logo">
+        </a>
+
+        <a href="index.html">Gold Calculator</a>
+    </nav>
+
+    <section class="hero">
+
+        <div class="gold-coin">₹</div>
+
+        <p class="hero-tag">SMART GOLD LOAN SOLUTIONS</p>
+
+        <h1>Gold Loan <span>Calculator</span></h1>
+
+        <p class="hero-description">
+            Calculate your gold loan eligibility or find out how much
+            gold you may need for your desired loan amount.
+        </p>
+
+    </section>
+
+    <main class="container">
+
+        <!-- ELIGIBLE GOLD CALCULATOR -->
+
+        <section class="calculator-card" id="eligible-calculator">
+
+            <div class="section-number">01</div>
+
+            <h2>Know Your Eligible Gold Amount</h2>
+
+            <p class="section-description">
+                Enter your gold details to estimate its value
+                and the loan amount you may be eligible for.
+            </p>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label for="eligibleWeight">
+                        Gold Weight (grams)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="eligibleWeight"
+                        placeholder="Example: 20"
+                        min="0.01"
+                        step="0.01"
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="eligiblePurity">
+                        Gold Purity
+                    </label>
+
+                    <select id="eligiblePurity">
+
+                        <option value="18">18 Karat</option>
+                        <option value="20">20 Karat</option>
+                        <option value="22" selected>22 Karat</option>
+                        <option value="24">24 Karat</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group full-width">
+
+                    <label for="eligibleRate">
+                        Gold Rate (₹ per gram)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="eligibleRate"
+                        value="7450"
+                        min="1"
+                    >
+
+                </div>
+
+            </div>
+
+            <button
+                type="button"
+                class="calculate-btn"
+                onclick="calculateEligibleGold()"
+            >
+                Calculate Eligible Amount
+            </button>
+
+            <div class="result-box" id="eligibleResult">
+
+                <h3>Your Estimated Result</h3>
+
+                <div class="result-row">
+
+                    <span>Estimated Gold Value</span>
+
+                    <strong id="goldValueResult">₹0</strong>
+
+                </div>
+
+                <div class="result-row">
+
+                    <span>Eligible Loan Amount</span>
+
+                    <strong id="eligibleLoanResult">₹0</strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- REQUIRED GOLD CALCULATOR -->
+
+        <section class="calculator-card" id="required-calculator">
+
+            <div class="section-number">02</div>
+
+            <h2>Know Required Gold for Your Loan</h2>
+
+            <p class="section-description">
+                Enter your desired loan amount to estimate
+                how much gold you may need to pledge.
+            </p>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label for="requiredLoanAmount">
+                        Required Loan Amount (₹)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="requiredLoanAmount"
+                        placeholder="Example: 100000"
+                        min="1"
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="requiredPurity">
+                        Gold Purity
+                    </label>
+
+                    <select id="requiredPurity">
+
+                        <option value="18">18 Karat</option>
+                        <option value="20">20 Karat</option>
+                        <option value="22" selected>22 Karat</option>
+                        <option value="24">24 Karat</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group full-width">
+
+                    <label for="requiredRate">
+                        Gold Rate (₹ per gram)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="requiredRate"
+                        value="7450"
+                        min="1"
+                    >
+
+                </div>
+
+            </div>
+
+            <button
+                type="button"
+                class="calculate-btn"
+                onclick="calculateRequiredGold()"
+            >
+                Calculate Required Gold
+            </button>
+
+            <div class="result-box" id="requiredResult">
+
+                <h3>Your Estimated Result</h3>
+
+                <div class="result-row">
+
+                    <span>Required Gold Weight</span>
+
+                    <strong id="requiredGoldResult">
+                        0 grams
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <div class="note-box">
+
+            <strong>Note:</strong>
+
+            These calculations are estimates for demonstration.
+            Final loan eligibility depends on gold valuation, purity,
+            lender policies and applicable loan-to-value limits.
+
+        </div>
+
+    </main>
+
+
+    <footer>
+        © 2026 SANVIN Fincap | Gold Calculator
+    </footer>
+
+
+    <script src="assets/gold-calculator.js"></script>
+
+</body>
+</html>

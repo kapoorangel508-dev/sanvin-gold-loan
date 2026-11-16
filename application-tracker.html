@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Track Application | SANVIN</title>
+
+  <link rel="stylesheet" href="assets/application-tracker.css">
+</head>
+
+<body>
+
+  <!-- 1. Top Blue Bar -->
+  <div class="topbar">
+    <div class="container">
+      <span>&#9742; 93549 00511</span>
+      <span>Login</span>
+    </div>
+  </div>
+
+
+  <!-- 2. Header with SANVIN Logo and Menu -->
+  <header class="header">
+
+    <div class="container">
+
+      <!-- SANVIN Logo -->
+      <div class="logo">
+        <img src="assets/sanvin-logo.jpeg"
+             alt="SANVIN Logo"
+             class="logo-img">
+      </div>
+
+      <!-- Navigation Menu -->
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="contact.html">About Us</a>
+        <a href="faq.html">Our Schemes</a>
+        <a href="gold-calculator.html">Gold Rates</a>
+        <a href="emi-calculator.html">Calculators</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="apply-loan.html" class="btn">Apply Now</a>
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- 3. Hero Section -->
+  <section class="hero">
+
+    <div class="container">
+
+      <p class="breadcrumb">
+        Home / Track Application
+      </p>
+
+      <p class="label">
+        APPLICATION STATUS
+      </p>
+
+      <h1>Track Your Application</h1>
+
+      <p class="intro">
+        Enter your application ID to see where your loan application
+        stands. For any query, please contact your nearest SANVIN branch.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- 4. Application Tracker -->
+  <main class="container">
+
+    <!-- Demo Application IDs -->
+    <p class="demo-tag">
+      &#9679; Demo data &mdash; try SV1001, SV1002 or SV1003
+    </p>
+
+
+    <div class="tracker">
+
+
+      <!-- Left: Search Form -->
+      <div class="box">
+
+        <h2>Find your application</h2>
+
+        <label for="appId">
+          Application ID
+        </label>
+
+        <input
+          type="text"
+          id="appId"
+          placeholder="Example: SV1001"
+        >
+
+        <p id="error"></p>
+
+        <button id="trackBtn">
+          Track Application
+        </button>
+
+      </div>
+
+
+      <!-- Right: Application Result -->
+      <div class="box" id="resultBox" hidden>
+
+        <h2>Application details</h2>
+
+
+        <div class="row">
+          <span>Application ID</span>
+          <strong id="resId"></strong>
+        </div>
+
+
+        <div class="row">
+          <span>Applicant name</span>
+          <strong id="resName"></strong>
+        </div>
+
+
+        <div class="row">
+          <span>Loan type</span>
+          <strong id="resType"></strong>
+        </div>
+
+
+        <div class="row">
+          <span>Applied on</span>
+          <strong id="resDate"></strong>
+        </div>
+
+
+        <!-- Current Application Status -->
+        <p class="small">
+          Current status
+        </p>
+
+        <p class="status" id="resStatus"></p>
+
+
+        <!-- Application Progress Steps -->
+        <ul class="steps" id="steps"></ul>
+
+      </div>
+
+    </div>
+
+
+    <!-- Important Note -->
+    <p class="note">
+      <strong>Important:</strong>
+      These are sample records for the design demo.
+      Real application status is available only from SANVIN.
+    </p>
+
+  </main>
+
+
+  <!-- 5. Footer -->
+  <footer>
+    &copy; 2026 SANVIN. All rights reserved.
+  </footer>
+
+
+  <!-- JavaScript -->
+  <script src="assets/application-tracker.js"></script>
+
+</body>
+
+</html>
+```

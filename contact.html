@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | SANVIN Fincap Gold Loan</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Arial,Helvetica,sans-serif;color:#1f2d3d;background:#fff;line-height:1.5}
+  a{color:inherit;text-decoration:none}
+  .container{max-width:1000px;margin:0 auto;padding:0 16px}
+  /* Top bar */
+  .topbar{background:#084e7d;color:#fff;font-size:12px;font-weight:bold}
+  .topbar .container{display:flex;justify-content:space-between;align-items:center;height:42px}
+  /* Header */
+  header{border-bottom:1px solid #e3e8ee;background:#fff}
+  header .container{display:flex;justify-content:space-between;align-items:center;height:73px}
+  .logo{color:#0b6eb4;font-size:20px;font-weight:bold;letter-spacing:.5px}
+  nav{display:flex;align-items:center;gap:17px;font-size:14px}
+  nav a:hover,nav a.active{color:#0b6eb4}
+  nav a.active{font-weight:bold}
+  .btn{display:inline-block;background:#0b6eb4;color:#fff;border:none;border-radius:4px;font-weight:bold;font-size:14px;padding:11px 17px;cursor:pointer;font-family:inherit}
+  .btn:hover{background:#095a94}
+  .btn-outline{background:#fff;color:#0b6eb4;border:1px solid #0b6eb4}
+  .btn-outline:hover{background:#eef3f9}
+  .menu-toggle{display:none;background:none;border:1px solid #d5dce4;border-radius:4px;padding:6px 10px;font-size:18px;cursor:pointer}
+  /* Hero */
+  .hero{background:#eef3f9;padding:42px 0 44px}
+  .crumb{font-size:12px;color:#4a5866;margin-bottom:22px}
+  .crumb a:hover{color:#0b6eb4}
+  .eyebrow{color:#1a8a3c;font-size:12px;font-weight:bold;letter-spacing:.4px;text-transform:uppercase}
+  .hero h1{font-size:40px;margin:10px 0 18px;color:#243443}
+  .hero p{color:#5b6875;font-size:15px;max-width:560px}
+  /* Content */
+  main{padding:36px 0 40px}
+  .note-top{text-align:right;color:#1a8a3c;font-size:12px;font-weight:bold;margin-bottom:14px}
+  .card{border:1px solid #d9e0e7;border-radius:6px;padding:24px;background:#fff}
+  .card-title{color:#5b6875;font-size:14px;font-weight:bold;margin-bottom:18px}
+  .grid{display:grid;grid-template-columns:1.4fr 1fr;gap:24px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  label{display:block;font-size:14px;font-weight:bold;margin-bottom:8px}
+  .field{margin-bottom:16px}
+  input,select,textarea{width:100%;border:1px solid #d5dce4;border-radius:4px;padding:10px 11px;font-size:14px;font-family:inherit;color:#1f2d3d;background:#fff}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:#0b6eb4;box-shadow:0 0 0 3px rgba(11,110,180,.12)}
+  textarea{resize:vertical;min-height:100px}
+  .err{color:#b3261e;font-size:12px;margin-top:6px;display:none}
+  .field.invalid input,.field.invalid select,.field.invalid textarea{border-color:#b3261e}
+  .field.invalid .err{display:block}
+  .full{width:100%}
+  .success{display:none;background:#eaf6ee;border:1px solid #b9e0c5;color:#1a6b33;border-radius:4px;padding:12px 14px;font-size:13px;margin-bottom:16px}
+  .info-item{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid #eef1f4}
+  .info-item:last-child{border-bottom:none}
+  .icon{width:36px;height:36px;flex-shrink:0;border-radius:50%;background:#eef3f9;color:#0b6eb4;display:flex;align-items:center;justify-content:center;font-size:16px}
+  .info-item h4{font-size:14px;margin-bottom:2px}
+  .info-item p{font-size:13px;color:#5b6875}
+  .branches{margin-top:24px}
+  .branch-wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:20px}
+  .branch{border:1px solid #e3e8ee;border-radius:6px;padding:20px;font-size:13px;color:#5b6875}
+  .branch h4{color:#1f2d3d;font-size:16px;margin-bottom:8px}
+  .branch p{margin-bottom:4px}
+  .branch .tag{display:inline-block;font-size:11px;font-weight:bold;color:#1a8a3c;background:#eaf6ee;padding:3px 8px;border-radius:10px;text-transform:uppercase}
+  .branch-actions{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+  .branch-actions .btn{padding:9px 14px;font-size:13px}
+  .map{width:100%;height:100%;min-height:260px;border:1px solid #e3e8ee;border-radius:6px}
+  .important{font-size:12px;color:#4a5866;margin-top:18px}
+  footer{background:#f5f7fa;text-align:center;font-size:12px;color:#4a5866;padding:28px 0;margin-top:10px}
+  @media(max-width:860px){
+    .grid,.row{grid-template-columns:1fr}
+    .branch-wrap{grid-template-columns:1fr}
+    .menu-toggle{display:block}
+    nav{display:none;position:absolute;top:115px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;padding:16px;border-bottom:1px solid #e3e8ee;z-index:10}
+    nav.open{display:flex}
+    .hero h1{font-size:30px}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="container"><span>&#9742; 93549 00511</span><a href="index.html">Login</a></div></div>
+
+<header>
+  <div class="container">
+    <a href="index.html" class="logo">SANVIN</a>
+    <button class="menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')">&#9776;</button>
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a href="contact.html">About Us</a>
+      <a href="faq.html">Our Schemes</a>
+      <a href="gold-calculator.html">Gold Rates</a>
+      <a href="repayment-schedule.html">Repayment Schedule</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html" class="active">Contact Us</a>
+      <a href="apply-loan.html" class="btn">Apply Now</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="crumb"><a href="index.html">Home</a> / Contact Us</div>
+    <div class="eyebrow">Get in touch</div>
+    <h1>Contact Us</h1>
+    <p>Have a question about a gold loan, your repayment or an existing account? Send us a message or visit our branch in Madangir, New Delhi.</p>
+  </div>
+</section>
+
+<main>
+  <div class="container">
+    <div class="note-top">&#9679; We usually respond within 1 working day</div>
+
+    <div class="grid">
+      <!-- Enquiry form -->
+      <div class="card">
+        <div class="card-title">Send us a message</div>
+        <div class="success" id="success"></div>
+        <form id="contactForm" novalidate>
+          <div class="row">
+            <div class="field">
+              <label for="name">Full Name</label>
+              <input id="name" placeholder="Example: Ravi Kumar">
+              <div class="err">Please enter your name.</div>
+            </div>
+            <div class="field">
+              <label for="mobile">Mobile Number</label>
+              <input id="mobile" maxlength="10" inputmode="numeric" placeholder="10-digit mobile number">
+              <div class="err">Please enter a valid 10-digit mobile number.</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="email">Email (optional)</label>
+              <input id="email" type="email" placeholder="you@example.com">
+              <div class="err">Please enter a valid email address.</div>
+            </div>
+            <div class="field">
+              <label for="topic">Query Type</label>
+              <select id="topic">
+                <option value="">Select a query type</option>
+                <option>New gold loan</option>
+                <option>Repayment / part payment</option>
+                <option>Loan closure &amp; gold release</option>
+                <option>Interest rate / scheme</option>
+                <option>Complaint</option>
+                <option>Other</option>
+              </select>
+              <div class="err">Please choose a query type.</div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="loanId">Loan / Application ID (optional)</label>
+            <input id="loanId" placeholder="Example: SV1001">
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" maxlength="500" placeholder="Tell us how we can help"></textarea>
+            <div class="err">Please enter a message (at least 10 characters).</div>
+          </div>
+          <button type="submit" class="btn full">Submit Enquiry</button>
+        </form>
+      </div>
+
+      <!-- Contact details -->
+      <div class="card">
+        <div class="card-title">Reach us directly</div>
+        <div class="info-item">
+          <div class="icon">&#9742;</div>
+          <div><h4>Customer Care</h4><p><a href="tel:+919354900511">+91 93549 00511</a></p></div>
+        </div>
+        <div class="info-item">
+          <div class="icon">&#9993;</div>
+          <div><h4>Email</h4><p><a href="mailto:support@sanvinfincap.com">support@sanvinfincap.com</a></p></div>
+        </div>
+        <div class="info-item">
+          <div class="icon">&#9719;</div>
+          <div><h4>Working Hours</h4><p>Mon – Sat: 9:30 AM – 6:00 PM<br>Closed on Sundays &amp; public holidays</p></div>
+        </div>
+        <div class="info-item">
+          <div class="icon">&#9873;</div>
+          <div><h4>Branch Address</h4><p>SANVIN Fincap, Madangir,<br>New Delhi, Delhi</p></div>
+        </div>
+        <a href="https://wa.me/919354900511" target="_blank" class="btn btn-outline full" style="text-align:center;margin-top:12px">Chat on WhatsApp</a>
+      </div>
+    </div>
+
+    <!-- Branch -->
+    <div class="card branches">
+      <div class="card-title">Visit our branch</div>
+      <div class="branch-wrap">
+        <div class="branch">
+          <span class="tag" style="margin:0 0 10px">Only branch</span>
+          <h4>SANVIN Fincap – Madangir</h4>
+          <p>Madangir, New Delhi, Delhi</p>
+          <p>&#9742; <a href="tel:+919354900511">+91 93549 00511</a></p>
+          <p>&#9719; Mon – Sat: 9:30 AM – 6:00 PM</p>
+          <p style="margin-top:10px;color:#1f2d3d">Gold loan applications, valuation, repayment, closure and gold release are all handled at this branch.</p>
+          <div class="branch-actions">
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Madangir%2C%20New%20Delhi">Get Directions</a>
+            <a class="btn btn-outline" href="tel:+919354900511">Call Branch</a>
+          </div>
+        </div>
+        <iframe class="map" title="SANVIN Madangir branch map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=Madangir%2C%20New%20Delhi&z=15&output=embed"></iframe>
+      </div>
+    </div>
+
+    <p class="important"><strong>Important:</strong> SANVIN will never ask for your OTP, PIN or password over phone or email.</p>
+  </div>
+</main>
+
+<footer>&copy; <span id="yr"></span> SANVIN. All rights reserved.</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // ----- Form validation -----
+  var mobile = document.getElementById('mobile');
+  mobile.addEventListener('input', function(){ mobile.value = mobile.value.replace(/\D/g,''); });
+
+  function check(id, ok){
+    var f = document.getElementById(id).parentElement;
+    f.classList.toggle('invalid', !ok);
+    return ok;
+  }
+
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var msg = document.getElementById('message').value.trim();
+    var valid = [
+      check('name', name.length >= 2),
+      check('mobile', /^[6-9]\d{9}$/.test(mobile.value)),
+      check('email', email === '' || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)),
+      check('topic', document.getElementById('topic').value !== ''),
+      check('message', msg.length >= 10)
+    ].every(Boolean);
+    if(!valid) return;
+
+    // TODO: send data to your backend / email service here
+    var ref = 'SVQ' + Math.floor(100000 + Math.random()*900000);
+    var s = document.getElementById('success');
+    s.innerHTML = '&#10003; Thank you, ' + name.split(' ')[0] + '! Your enquiry has been received. Reference number: <strong>' + ref + '</strong>';
+    s.style.display = 'block';
+    this.reset();
+    s.scrollIntoView({behavior:'smooth', block:'center'});
+  });
+</script>
+</body>
+</html>

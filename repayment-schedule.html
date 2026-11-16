@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Repayment Schedule | SANVIN Fincap Gold Loan</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Arial,Helvetica,sans-serif;color:#1f2d3d;background:#fff;line-height:1.5}
+  a{color:inherit;text-decoration:none}
+  .container{max-width:1000px;margin:0 auto;padding:0 16px}
+  .topbar{background:#084e7d;color:#fff;font-size:12px;font-weight:bold}
+  .topbar .container{display:flex;justify-content:space-between;align-items:center;height:42px}
+  header{border-bottom:1px solid #e3e8ee;background:#fff}
+  header .container{display:flex;justify-content:space-between;align-items:center;height:73px}
+  .logo{color:#0b6eb4;font-size:20px;font-weight:bold;letter-spacing:.5px}
+  nav{display:flex;align-items:center;gap:17px;font-size:14px}
+  nav a:hover,nav a.active{color:#0b6eb4}
+  nav a.active{font-weight:bold}
+  .btn{display:inline-block;background:#0b6eb4;color:#fff;border:none;border-radius:4px;font-weight:bold;font-size:14px;padding:11px 17px;cursor:pointer;font-family:inherit;text-align:center}
+  .btn:hover{background:#095a94}
+  .btn-outline{background:#fff;color:#0b6eb4;border:1px solid #0b6eb4}
+  .btn-outline:hover{background:#eef3f9}
+  .menu-toggle{display:none;background:none;border:1px solid #d5dce4;border-radius:4px;padding:6px 10px;font-size:18px;cursor:pointer}
+  .hero{background:#eef3f9;padding:42px 0 44px}
+  .crumb{font-size:12px;color:#4a5866;margin-bottom:22px}
+  .crumb a:hover{color:#0b6eb4}
+  .eyebrow{color:#1a8a3c;font-size:12px;font-weight:bold;letter-spacing:.4px;text-transform:uppercase}
+  .hero h1{font-size:40px;margin:10px 0 18px;color:#243443}
+  .hero p{color:#5b6875;font-size:15px;max-width:560px}
+  main{padding:36px 0 40px}
+  .note-top{text-align:right;color:#1a8a3c;font-size:12px;font-weight:bold;margin-bottom:14px}
+  .card{border:1px solid #d9e0e7;border-radius:6px;padding:24px;background:#fff;margin-bottom:22px}
+  .card-title{color:#5b6875;font-size:14px;font-weight:bold;margin-bottom:18px}
+  .lookup{display:flex;gap:12px}
+  .lookup input{flex:1}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  label{display:block;font-size:14px;font-weight:bold;margin-bottom:8px}
+  input,select{width:100%;border:1px solid #d5dce4;border-radius:4px;padding:10px 11px;font-size:14px;font-family:inherit;color:#1f2d3d;background:#fff}
+  input:focus,select:focus{outline:none;border-color:#0b6eb4;box-shadow:0 0 0 3px rgba(11,110,180,.12)}
+  .field.invalid input{border-color:#b3261e}
+  .msg{font-size:12px;margin-top:8px;min-height:16px}
+  .msg.err{color:#b3261e}
+  .msg.ok{color:#1a8a3c}
+  .hint{font-size:12px;color:#7a8794;margin-top:5px}
+  .types{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:4px 0 20px}
+  .type{border:1px solid #d5dce4;border-radius:6px;padding:12px 14px;cursor:pointer;font-size:13px;color:#5b6875}
+  .type input{display:none}
+  .type strong{display:block;color:#1f2d3d;font-size:14px;margin-bottom:2px}
+  .type.active{border-color:#0b6eb4;background:#eef3f9}
+  .type.active strong{color:#0b6eb4}
+  .full{width:100%}
+  .summary{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}
+  .tile{background:#f7f9fc;border:1px solid #e3e8ee;border-radius:6px;padding:14px 16px}
+  .tile span{display:block;font-size:12px;color:#5b6875;margin-bottom:4px}
+  .tile b{font-size:19px;color:#1f2d3d}
+  .tile.primary{background:#0b6eb4;border-color:#0b6eb4}
+  .tile.primary span,.tile.primary b{color:#fff}
+  .bar{display:flex;height:10px;border-radius:5px;overflow:hidden;background:#e3e8ee;margin:6px 0 8px}
+  .bar .p{background:#0b6eb4}
+  .bar .i{background:#e0a526}
+  .legend{font-size:12px;color:#5b6875;display:flex;gap:16px;margin-bottom:18px}
+  .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:middle}
+  .table-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+  .table-head .actions{display:flex;gap:8px}
+  .table-head .btn{padding:8px 14px;font-size:13px}
+  .table-wrap{overflow-x:auto;border:1px solid #e3e8ee;border-radius:6px}
+  table{width:100%;border-collapse:collapse;font-size:13px;min-width:640px}
+  th{background:#eef3f9;color:#243443;text-align:right;padding:11px 12px;font-size:12px;text-transform:uppercase;letter-spacing:.3px}
+  td{padding:10px 12px;text-align:right;border-top:1px solid #eef1f4}
+  th:first-child,td:first-child,th:nth-child(2),td:nth-child(2){text-align:left}
+  tbody tr:hover{background:#f7f9fc}
+  tr.last td{font-weight:bold;color:#0b6eb4}
+  tfoot td{font-weight:bold;background:#f5f7fa;border-top:2px solid #d9e0e7}
+  tfoot td:nth-child(2){text-align:right}
+  .important{font-size:12px;color:#4a5866;margin-top:4px}
+  footer{background:#f5f7fa;text-align:center;font-size:12px;color:#4a5866;padding:28px 0;margin-top:10px}
+  @media(max-width:860px){
+    .grid,.types{grid-template-columns:1fr}
+    .summary{grid-template-columns:1fr 1fr}
+    .menu-toggle{display:block}
+    nav{display:none;position:absolute;top:115px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;padding:16px;border-bottom:1px solid #e3e8ee;z-index:10}
+    nav.open{display:flex}
+    .hero h1{font-size:30px}
+    .lookup{flex-direction:column}
+  }
+  @media print{
+    .topbar,header,.hero,.no-print,footer,.note-top{display:none!important}
+    .card{border:none;padding:0}
+    main{padding:0}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="container"><span>&#9742; 93549 00511</span><a href="index.html">Login</a></div></div>
+
+<header>
+  <div class="container">
+    <a href="index.html" class="logo">SANVIN</a>
+    <button class="menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')">&#9776;</button>
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a href="contact.html">About Us</a>
+      <a href="faq.html">Our Schemes</a>
+      <a href="gold-calculator.html">Gold Rates</a>
+      <a href="repayment-schedule.html" class="active">Repayment Schedule</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="apply-loan.html" class="btn">Apply Now</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="crumb"><a href="index.html">Home</a> / Repayment Schedule</div>
+    <div class="eyebrow">Plan your repayment</div>
+    <h1>Repayment Schedule</h1>
+    <p>See a month-by-month repayment plan for your gold loan. Load an existing loan or enter your own amount, rate and tenure.</p>
+  </div>
+</section>
+
+<main>
+  <div class="container">
+    <div class="note-top">&#9679; Demo data — try SV1001, SV1002 or SV1003</div>
+
+    <!-- Lookup -->
+    <div class="card no-print">
+      <div class="card-title">Load an existing loan</div>
+      <label for="loanId">Loan ID</label>
+      <div class="lookup">
+        <input id="loanId" placeholder="Example: SV1001">
+        <button class="btn" id="loadBtn" style="min-width:160px">Load Loan</button>
+      </div>
+      <div class="msg" id="lookupMsg"></div>
+    </div>
+
+    <!-- Calculator -->
+    <div class="card no-print">
+      <div class="card-title">Loan details</div>
+      <div class="grid">
+        <div class="field">
+          <label for="amount">Loan Amount (&#8377;)</label>
+          <input id="amount" type="number" min="1000" step="500" value="100000">
+          <div class="hint">&#8377;1,000 – &#8377;50,00,000</div>
+        </div>
+        <div class="field">
+          <label for="rate">Interest Rate (% p.a.)</label>
+          <input id="rate" type="number" min="1" max="36" step="0.01" value="12">
+          <div class="hint">As per your scheme</div>
+        </div>
+        <div class="field">
+          <label for="tenure">Tenure</label>
+          <select id="tenure">
+            <option value="3">3 months</option>
+            <option value="6">6 months</option>
+            <option value="9">9 months</option>
+            <option value="12" selected>12 months</option>
+            <option value="18">18 months</option>
+            <option value="24">24 months</option>
+          </select>
+        </div>
+      </div>
+      <div class="grid" style="margin-top:16px">
+        <div class="field">
+          <label for="start">Loan Start Date</label>
+          <input id="start" type="date">
+        </div>
+      </div>
+
+      <label style="margin-top:16px">Repayment Type</label>
+      <div class="types" id="types">
+        <label class="type active"><input type="radio" name="type" value="emi" checked><strong>Monthly EMI</strong>Principal + interest every month</label>
+        <label class="type"><input type="radio" name="type" value="interest"><strong>Interest Only</strong>Interest monthly, principal at end</label>
+        <label class="type"><input type="radio" name="type" value="bullet"><strong>Bullet</strong>Principal + interest at end</label>
+      </div>
+      <div class="msg err" id="calcMsg"></div>
+      <button class="btn full" id="calcBtn">Generate Schedule</button>
+    </div>
+
+    <!-- Result -->
+    <div class="card" id="result" style="display:none">
+      <div class="card-title" id="resultTitle">Your repayment summary</div>
+      <div class="summary">
+        <div class="tile primary"><span id="payLabel">Monthly EMI</span><b id="sPay">–</b></div>
+        <div class="tile"><span>Loan Amount</span><b id="sAmt">–</b></div>
+        <div class="tile"><span>Total Interest</span><b id="sInt">–</b></div>
+        <div class="tile"><span>Total Payable</span><b id="sTot">–</b></div>
+      </div>
+      <div class="bar"><div class="p" id="barP"></div><div class="i" id="barI"></div></div>
+      <div class="legend">
+        <span><i class="dot" style="background:#0b6eb4"></i>Principal <b id="pctP"></b></span>
+        <span><i class="dot" style="background:#e0a526"></i>Interest <b id="pctI"></b></span>
+      </div>
+
+      <div class="table-head">
+        <div class="card-title" style="margin:0">Month-wise schedule</div>
+        <div class="actions no-print">
+          <button class="btn btn-outline" onclick="window.print()">Print</button>
+          <button class="btn btn-outline" id="csvBtn">Download CSV</button>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>#</th><th>Due Date</th><th>Opening Balance</th><th>Principal</th><th>Interest</th><th>Payment</th><th>Closing Balance</th></tr></thead>
+          <tbody id="tbody"></tbody>
+          <tfoot id="tfoot"></tfoot>
+        </table>
+      </div>
+    </div>
+
+    <p class="important"><strong>Important:</strong> This schedule is indicative and assumes payments are made on time. Actual dues, charges and interest are as per your loan agreement. Demo loan IDs are sample records for the design demo.</p>
+  </div>
+</main>
+
+<footer>&copy; <span id="yr"></span> SANVIN. All rights reserved.</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var $ = function(id){ return document.getElementById(id); };
+  var today = new Date();
+  $('start').value = today.toISOString().slice(0,10);
+
+  // ----- Demo loans (replace with an API call to your backend) -----
+  var demoLoans = {
+    SV1001:{name:'Ravi Kumar',  amount:150000, rate:11.5, tenure:12, type:'emi',      start:'2026-09-05'},
+    SV1002:{name:'Priya Sharma',amount:75000,  rate:13,   tenure:6,  type:'interest', start:'2026-10-12'},
+    SV1003:{name:'Amit Verma',  amount:250000, rate:10.9, tenure:9,  type:'bullet',   start:'2026-08-20'}
+  };
+
+  var inr = function(n){ return '₹' + Math.round(n).toLocaleString('en-IN'); };
+  var lastRows = [], loanLabel = '';
+
+  // repayment type cards
+  $('types').addEventListener('change', function(){
+    document.querySelectorAll('.type').forEach(function(t){ t.classList.toggle('active', t.querySelector('input').checked); });
+  });
+  function setType(v){
+    document.querySelectorAll('input[name=type]').forEach(function(r){ r.checked = r.value === v; });
+    $('types').dispatchEvent(new Event('change'));
+  }
+
+  // ----- Lookup -----
+  function loadLoan(){
+    var id = $('loanId').value.trim().toUpperCase();
+    var m = $('lookupMsg');
+    if(!id){ m.className='msg err'; m.textContent='Please enter a loan ID.'; return; }
+    var L = demoLoans[id];
+    if(!L){ m.className='msg err'; m.textContent='No loan found. Please check the ID.'; return; }
+    $('amount').value = L.amount; $('rate').value = L.rate; $('tenure').value = L.tenure; $('start').value = L.start;
+    setType(L.type);
+    m.className='msg ok'; m.textContent='✓ Loan ' + id + ' loaded for ' + L.name + '.';
+    loanLabel = id + ' – ' + L.name;
+    generate();
+  }
+  $('loadBtn').onclick = loadLoan;
+  $('loanId').addEventListener('keydown', function(e){ if(e.key==='Enter') loadLoan(); });
+
+  // ----- Schedule -----
+  function addMonths(d, n){
+    var x = new Date(d.getFullYear(), d.getMonth() + n, 1);
+    var last = new Date(x.getFullYear(), x.getMonth() + 1, 0).getDate();
+    x.setDate(Math.min(d.getDate(), last));
+    return x;
+  }
+  function fmtDate(d){ return d.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}); }
+
+  function buildSchedule(P, annualRate, n, type, start){
+    var r = annualRate / 12 / 100, rows = [], bal = P;
+    var emi = type === 'emi' ? (P * r * Math.pow(1+r,n)) / (Math.pow(1+r,n) - 1) : 0;
+    for(var m = 1; m <= n; m++){
+      var open = bal, interest, principal;
+      if(type === 'emi'){
+        interest = open * r;
+        principal = (m === n) ? open : emi - interest;   // last row absorbs rounding
+      } else if(type === 'interest'){
+        interest = P * r;
+        principal = (m === n) ? P : 0;
+      } else { // bullet: simple interest accrues, all paid at the end
+        interest = (m === n) ? P * r * n : 0;
+        principal = (m === n) ? P : 0;
+      }
+      bal = Math.max(open - principal, 0);
+      rows.push({m:m, date:addMonths(start, m), open:open, principal:principal, interest:interest, pay:principal+interest, close:bal});
+    }
+    return {rows:rows, emi:emi};
+  }
+
+  function generate(){
+    var P = parseFloat($('amount').value), R = parseFloat($('rate').value), n = parseInt($('tenure').value,10);
+    var type = document.querySelector('input[name=type]:checked').value;
+    var start = $('start').value ? new Date($('start').value + 'T00:00:00') : today;
+    var msg = $('calcMsg'); msg.textContent = '';
+    $('amount').parentElement.classList.toggle('invalid', !(P >= 1000 && P <= 5000000));
+    $('rate').parentElement.classList.toggle('invalid', !(R > 0 && R <= 36));
+    if(!(P >= 1000 && P <= 5000000)){ msg.textContent = 'Please enter a loan amount between ₹1,000 and ₹50,00,000.'; return; }
+    if(!(R > 0 && R <= 36)){ msg.textContent = 'Please enter a valid interest rate.'; return; }
+
+    var s = buildSchedule(P, R, n, type, start);
+    lastRows = s.rows;
+    var totInt = s.rows.reduce(function(a,r){return a + r.interest;}, 0);
+    var tot = P + totInt;
+
+    var label = {emi:'Monthly EMI', interest:'Monthly Interest', bullet:'Payable at Maturity'}[type];
+    var payVal = type === 'emi' ? s.emi : type === 'interest' ? P * R / 1200 : tot;
+    $('payLabel').textContent = label;
+    $('sPay').textContent = inr(payVal);
+    $('sAmt').textContent = inr(P);
+    $('sInt').textContent = inr(totInt);
+    $('sTot').textContent = inr(tot);
+    var pp = P / tot * 100;
+    $('barP').style.width = pp + '%'; $('barI').style.width = (100-pp) + '%';
+    $('pctP').textContent = pp.toFixed(1) + '%'; $('pctI').textContent = (100-pp).toFixed(1) + '%';
+    $('resultTitle').textContent = loanLabel ? 'Repayment summary – ' + loanLabel : 'Your repayment summary';
+
+    $('tbody').innerHTML = s.rows.map(function(r){
+      return '<tr' + (r.m === n ? ' class="last"' : '') + '><td>' + r.m + '</td><td>' + fmtDate(r.date) + '</td><td>' + inr(r.open) +
+             '</td><td>' + inr(r.principal) + '</td><td>' + inr(r.interest) + '</td><td>' + inr(r.pay) + '</td><td>' + inr(r.close) + '</td></tr>';
+    }).join('');
+    $('tfoot').innerHTML = '<tr><td colspan="3">Total</td><td>' + inr(P) + '</td><td>' + inr(totInt) + '</td><td>' + inr(tot) + '</td><td></td></tr>';
+
+    $('result').style.display = 'block';
+    $('result').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  $('calcBtn').onclick = function(){ loanLabel = ''; $('lookupMsg').textContent = ''; generate(); };
+
+  // ----- CSV export -----
+  $('csvBtn').onclick = function(){
+    var csv = ['Month,Due Date,Opening Balance,Principal,Interest,Payment,Closing Balance'];
+    lastRows.forEach(function(r){
+      csv.push([r.m, '"' + fmtDate(r.date) + '"', r.open.toFixed(2), r.principal.toFixed(2), r.interest.toFixed(2), r.pay.toFixed(2), r.close.toFixed(2)].join(','));
+    });
+    var blob = new Blob([csv.join('\n')], {type:'text/csv'});
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'sanvin-repayment-schedule.csv';
+    a.click();
+    URL.revokeObjectURL(a.href);
+  };
+</script>
+</body>
+</html>
